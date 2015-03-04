@@ -1,0 +1,30 @@
+@require "mixins.inc"
+
+page-bg = #FDF5E6
+
+link-hover-color = #7851A9
+
+header-color = #C71585
+
+
+h1
+    color header-color
+
+.inline-list
+	inline-list(1em)
+	
+	& > li a
+		text-decoration none
+		color inherit
+		
+		&:hover
+			color link-hover-color
+
+body
+	background-color page-bg
+
+nav
+	margin-left 2em
+
+main#content
+	center-block(960px)

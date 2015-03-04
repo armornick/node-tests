@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title><%= @getPreparedTitle() %></title>
+    <%- @getBlock("meta").toHTML() %>
+    <%- @getBlock("styles").add(["/styles/style.css"]).toHTML() %>
+</head>
+<body>
+	<nav class="inline-list">
+	    <% for page in @getCollection("pages").toJSON(): %>
+	        <li class="<%= if page.id is @document.id then 'active' else 'inactive' %>">
+	            <a href="<%= page.url %>">
+	                <%= page.title %>
+	            </a>
+	        </li>
+	    <% end %>
+	</nav>
+	<main id="content">
+	    <h1><%= @document.title %></h1>
+	    <%- @content %>
+    </section>
+    <%- @getBlock("scripts").add(["/vendor/jquery.js","/scripts/script.js"]).toHTML() %>
+</body>
+</html>
