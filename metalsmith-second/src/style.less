@@ -1,0 +1,53 @@
+//
+// color palette 
+// based on baby rainbox (http://www.color-hex.com/color-palette/5432)
+//
+@yellowish: #fff7d6;
+@purplish: #c6c3ff;
+@bluish: #c8eaff;
+@reddish: #e8b3b1;
+@greenish: #b7e8ca;
+
+//
+// color configurations
+//
+@body-bg: @yellowish;
+@header-color: darken(@bluish, 50%);
+
+//
+// page structure configuration
+//
+@max-width: 960px;
+
+//
+// font configuration
+//
+@body-font: sans-serif;
+@footer-font-size: 0.8em;
+
+//
+// mixins
+//
+.center-block(@max-width: 960px) {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: @max-width;
+}
+
+
+//
+// main styles
+//
+body {
+	background-color: @body-bg;
+	font-family: @body-font;
+	.center-block(@max-width);
+}
+
+h1, h2, h3 {
+	color: @header-color;
+}
+
+footer {
+	font-size: @footer-font-size;
+}

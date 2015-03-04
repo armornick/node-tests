@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">  
+    <title>{{title}} - My Web Site</title>
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv-printshiv.min.js" media="all"></script><![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+</head>
+<body>
+    {{{contents}}}
+
+    <p id="the-moment"></p>
+
+    <!-- SCRIPT FILES -->
+    <script src="http://localhost:35729/livereload.js"></script>
+    {{#if script}}
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/{{script}}"></script>
+    {{/if}}
+</body>
+</html>

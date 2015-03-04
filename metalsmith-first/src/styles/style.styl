@@ -1,0 +1,33 @@
+
+page-width = 960px
+page-bg = #F0FFF0
+page-font = sans-serif
+
+header-color = #555D50
+header-font = serif
+
+horizontal-center() {
+	margin-left auto
+	margin-right auto
+}
+
+body {
+	max-width: page-width
+	horizontal-center()
+	
+	background-color: page-bg
+	font-family: page-font
+}
+
+$header
+	color header-color
+	font-family header-font
+
+h1
+	@extends $header
+
+h2
+	@extends $header
+
+h3
+	@extends $header

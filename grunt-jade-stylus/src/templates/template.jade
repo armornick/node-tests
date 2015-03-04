@@ -1,0 +1,26 @@
+doctype html
+html(lang="en")
+  head
+    title= pageTitle
+    script(type='text/javascript').
+      if (foo) {
+         bar(1 + 5)
+      }
+    link(rel='stylesheet', href='css/test01.css')
+  body
+    #container.col
+      header
+        h1 Jade - node template engine
+
+        nav
+          li
+            a(href='index.html') Home
+          li
+            a(href='about.html') About
+          li
+            a(href='#') item
+          li
+            a(href='#') item
+
+      #content
+        | <%=content%>
