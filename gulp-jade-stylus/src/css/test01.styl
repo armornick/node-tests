@@ -1,0 +1,54 @@
+
+@import 'mixins'
+
+body-bg = #343434
+body-font = sans-serif
+header-bg = #29AB87
+container-bg = #fff
+
+light-text = #F0FFFF
+
+
+*
+*:after
+*:before
+	box-sizing border-box
+
+body
+	background-color body-bg
+	font-family body-font
+
+#container
+	width 1024px
+	margin 0 auto
+	background-color container-bg
+
+header
+	margin-top 1em
+	background-color header-bg
+	padding 10px 0
+	
+	h1
+		text-align center
+
+nav
+	floated-list()
+	margin-left 2em
+
+
+	a
+		block(75px, true); border-radius(15px)
+		color light-text; //background-color header-bg
+		padding 0.5em
+		
+		&:hover
+			background-color darken(header-bg, 15%)
+	
+	.brand
+		text-transform uppercase
+		font-weight bold
+			
+
+#content
+	padding 1em
+	min-height 30em
