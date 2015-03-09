@@ -1,0 +1,14 @@
+---
+title: Home Page
+page: true
+---
+
+<h1>Bootstrap starter template</h1>
+<p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+
+<h2>Products</h2>
+<ul>
+{{#each pages}}
+{{#unless data.page}}<li><a href="{{basename}}.html">{{data.title}}</a></li>{{/unless}}
+{{/each}}
+</ul>

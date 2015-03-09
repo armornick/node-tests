@@ -1,0 +1,7 @@
+{
+  "locals": {
+    "title": "Bare minimum wintersmith site"
+  },
+  "plugins": ["wintersmith-stylus", "wintersmith-livereload"],
+  "ignore": ["css/bootstrap/**/*.styl"]
+}
