@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="scotchTodo">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Nodo/Angular Todo</title>
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/ico" href="images/favicon.ico">
+
+  <!-- Load JavaScript libraries
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+  <script src="js/controllers/main.js"></script>
+  <script src="js/services/todos.js"></script>
+  <script src="js/core.js"></script>
+
+</head>
+
+<!-- SET THE CONTROLLER AND GET ALL TODOS -->
+<body ng-controller="mainController">
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <header role="banner" class="row">
+      <h1>Todo-aholic! ({{ todos.length }} todos)</h1>
+    </header>
+
+    <div class="row">
+      <main id="content">
+        
+        <section id="todo-list">
+          <ul ng-repeat="todo in todos">
+            <li>
+              <input type="checkbox" ng-click="deleteTodo(todo._id)"> {{todo.text}}
+            </li>
+          </ul>
+        </section>
+
+        <section id="todo-form">
+          <form>
+            <input type="text" class="u-full-width" placeholder="I want to buy a puppy that will love me forever" ng-model="formData.text">
+            <input type="submit" value="Add" class="button-primary" ng-click="createTodo()">
+          </form>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
