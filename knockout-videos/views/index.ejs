@@ -1,0 +1,76 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title><%= title %></title>
+	<link rel="stylesheet" href="/css/foundation.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<script src="/js/vendor/modernizr.js"></script>
+</head>
+<body>
+	<div class="wrapper row">
+		<main class="medium-8 columns">
+			<h1><%= title %></h1>
+
+			<section id="video-list">
+				<p>Welcome to <%= title %></p>
+
+				<ul data-bind="foreach: videos">
+					<li><a data-bind="text: title, click: $root.goToVideo"></a></li>
+				</ul>
+			</section>
+
+			<form id="add-video" class="hide" data-bind="submit: addVideo">
+				<label>Title:
+					<input type="text" data-bind="value: newVideoTitle" />
+				</label>
+
+				<label>Video URL:
+					<input type="text" data-bind="value: newVideoUrl" />
+				</label>
+
+				<label>Category:
+					<input type="text" data-bind="value: newVideoCategory" />
+				</label>
+
+				<button type="submit">Add</button>
+				<button data-bind="click: showVideoList">Cancel</button>
+			</form>
+
+			<section id="show-video" class="hide" data-bind="with: currentVideo">
+				<div class="flex-video">
+					<iframe data-bind="attr: { src: $root.currentVideoSrc, title: title }"></iframe>
+				</div>
+				<p data-bind="text: title"></p>
+				<button data-bind="click: $root.closeVideo">Close Video</button>
+			</section>
+		</main>
+
+		<aside class="medium-4 columns">
+			<ul class="stack button-group">
+				<li><a class="small button" data-bind="click: showAddVideoForm">Add Video</a></li>
+				<li><a class="small button" data-bind="click: refreshVideoData">Refresh Videos</a></li>
+			</ul>
+			<!-- <button data-bind="click: toggleVideoForm">Add Video</button> -->
+			<!-- <button data-bind="click: refreshVideoData">Refresh Videos</button> -->
+
+			<hr />
+
+			<h3>Categories</h3>
+			<ul class="inline-list" data-bind="foreach: categories">
+				<li data-bind="text: $data"></li>
+			</ul>
+		</aside>
+	</div>
+
+	<script src="/js/polyfill.js"></script>
+	<script src="/js/vendor/jquery.js"></script>
+	<script src="/js/knockout-3.3.0.js"></script>
+	<script src="/js/foundation.min.js"></script>
+	<script>
+		$(document).foundation();
+	</script>
+	<script src="/js/app.js"></script>
+</body>
+</html>
